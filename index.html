@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Swine Shredders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#1a1033" />
+  <meta name="description" content="Swine Shredders — an endless skateboarding pig game for mobile." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="game" width="800" height="450" aria-label="Swine Shredders game canvas"></canvas>
+
+    <div id="hud" class="hud hidden">
+      <div class="hud-row">
+        <div class="hud-chip" id="scoreChip"><span class="label">SCORE</span><span id="score">0</span></div>
+        <div class="hud-chip" id="comboChip"><span class="label">COMBO</span>x<span id="combo">1</span></div>
+        <div class="hud-chip" id="truffleChip"><span class="label">TRUFFLES</span><span id="truffles">0</span></div>
+      </div>
+      <button id="pauseBtn" class="icon-btn" aria-label="Pause">II</button>
+    </div>
+
+    <div id="menu" class="overlay">
+      <div class="panel">
+        <h1 class="title">SWINE <span class="accent">SHREDDERS</span></h1>
+        <p class="tag">Pork City Skate Tour</p>
+        <div class="hero"></div>
+        <p class="hint">Tap to ollie. Hold for a bigger jump.<br/>Swipe up in the air for a kickflip. Swipe down to grind.</p>
+        <button id="playBtn" class="big-btn">TAP TO SKATE</button>
+        <p class="best">Best: <span id="bestScore">0</span></p>
+      </div>
+    </div>
+
+    <div id="pause" class="overlay hidden">
+      <div class="panel">
+        <h2>PAUSED</h2>
+        <button id="resumeBtn" class="big-btn">RESUME</button>
+        <button id="quitBtn" class="ghost-btn">QUIT</button>
+      </div>
+    </div>
+
+    <div id="gameover" class="overlay hidden">
+      <div class="panel">
+        <h2>WIPEOUT!</h2>
+        <p class="result">Score: <span id="finalScore">0</span></p>
+        <p class="result small">Truffles: <span id="finalTruffles">0</span> &middot; Best: <span id="finalBest">0</span></p>
+        <p id="newBest" class="new-best hidden">NEW BEST!</p>
+        <button id="againBtn" class="big-btn">SKATE AGAIN</button>
+        <button id="menuBtn" class="ghost-btn">MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
